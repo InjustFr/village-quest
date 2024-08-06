@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1grjsi1p04ok"]
+
+[ext_resource type="Theme" uid="uid://wyyce56agfeu" path="res://src/gui/theme.tres" id="1_m3n4a"]
+[ext_resource type="Script" path="res://src/gui/score_ui.gd" id="2_ag3dj"]
+
+[node name="ScoreUi" type="Label"]
+offset_right = 35.0
+offset_bottom = 11.0
+theme = ExtResource("1_m3n4a")
+theme_type_variation = &"HeaderLarge"
+text = "00000"
+script = ExtResource("2_ag3dj")

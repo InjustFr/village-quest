@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bntldxtfb7buh"]
+
+[ext_resource type="Script" path="res://src/quest_item.gd" id="1_c1a1m"]
+[ext_resource type="Resource" uid="uid://di0j8l82jpgfk" path="res://src/items/meal_item_resource.tres" id="2_5m0x2"]
+[ext_resource type="Texture2D" uid="uid://pujdq1sutdfh" path="res://assets/Noodle.png" id="3_00x2v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dnxrh"]
+radius = 48.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ig465"]
+radius = 4.0
+
+[node name="MealItem" type="StaticBody2D"]
+z_index = 1
+collision_layer = 4
+script = ExtResource("1_c1a1m")
+type = 3
+item = ExtResource("2_5m0x2")
+
+[node name="CollectArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
+shape = SubResource("CircleShape2D_dnxrh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_00x2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ig465")

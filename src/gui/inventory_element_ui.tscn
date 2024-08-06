@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkhcotwaukh2y"]
+
+[ext_resource type="Script" path="res://src/gui/inventory_element_ui.gd" id="1_7qry2"]
+[ext_resource type="Theme" uid="uid://wyyce56agfeu" path="res://src/gui/theme.tres" id="2_maonf"]
+
+[node name="InventoryElementUi" type="HBoxContainer"]
+offset_right = 33.0
+offset_bottom = 23.0
+theme = ExtResource("2_maonf")
+script = ExtResource("1_7qry2")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme = ExtResource("2_maonf")
+
+[node name="Amount" type="Label" parent="PanelContainer"]
+layout_mode = 2
+theme = ExtResource("2_maonf")
+text = "0"
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_maonf")
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2

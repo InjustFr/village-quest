@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1m6qbv3or7d2"]
+
+[ext_resource type="Theme" uid="uid://wyyce56agfeu" path="res://src/gui/theme.tres" id="1_vl0jp"]
+[ext_resource type="Script" path="res://src/gui/quest_item_ui.gd" id="2_hut63"]
+
+[node name="QuestItemUi" type="HBoxContainer"]
+theme = ExtResource("1_vl0jp")
+script = ExtResource("2_hut63")
+
+[node name="IconTexture" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_vl0jp")
+vertical_alignment = 1

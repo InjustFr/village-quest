@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr56lyjy6k314"]
+
+[ext_resource type="Script" path="res://src/quest_item_spawner.gd" id="1_umn8u"]
+[ext_resource type="PackedScene" uid="uid://daxqldelfixj2" path="res://src/items/wood_item.tscn" id="2_p1rno"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_erlgt"]
+radius = 24.0
+
+[node name="QuestItemSpawner" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_umn8u")
+item = ExtResource("2_p1rno")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_erlgt")

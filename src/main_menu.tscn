@@ -1,0 +1,158 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmta25rx5rqgx"]
+
+[ext_resource type="Theme" uid="uid://wyyce56agfeu" path="res://src/gui/theme.tres" id="1_cg0e4"]
+[ext_resource type="Script" path="res://src/main_menu.gd" id="2_m8a7x"]
+[ext_resource type="PackedScene" uid="uid://dkxtbmu1usxwq" path="res://src/gui/background.tscn" id="3_bw2na"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cvrqh"]
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cg0e4")
+script = ExtResource("2_m8a7x")
+
+[node name="Background" parent="." instance=ExtResource("3_bw2na")]
+layout_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "QUEST   RACE"
+label_settings = SubResource("LabelSettings_cvrqh")
+horizontal_alignment = 1
+
+[node name="HighScores" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ScoreContainer1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HighScores"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/HighScores/ScoreContainer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "NICOLE"
+uppercase = true
+
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer/HighScores/ScoreContainer1"]
+layout_mode = 2
+text = "1000"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="ScoreContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HighScores"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/HighScores/ScoreContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "NICOLE"
+uppercase = true
+
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer/HighScores/ScoreContainer2"]
+layout_mode = 2
+text = "1000"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="ScoreContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HighScores"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/HighScores/ScoreContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "NICOLE"
+uppercase = true
+
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer/HighScores/ScoreContainer3"]
+layout_mode = 2
+text = "1000"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="ScoreContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HighScores"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/HighScores/ScoreContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "NICOLE"
+uppercase = true
+
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer/HighScores/ScoreContainer4"]
+layout_mode = 2
+text = "1000"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="ScoreContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HighScores"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/HighScores/ScoreContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "NICOLE"
+uppercase = true
+
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer/HighScores/ScoreContainer5"]
+layout_mode = 2
+text = "1000"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "NEW  GAME"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "OPTIONS"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "QUIT"

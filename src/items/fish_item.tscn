@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://behd5ant5wf04"]
+
+[ext_resource type="Script" path="res://src/quest_item.gd" id="1_564bo"]
+[ext_resource type="Resource" uid="uid://p05au8o0e755" path="res://src/items/fish_item_resource.tres" id="2_gv3xg"]
+[ext_resource type="Texture2D" uid="uid://bn6oeprcrg3lw" path="res://assets/Fish.png" id="3_bxl18"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dnxrh"]
+radius = 48.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ig465"]
+radius = 4.0
+
+[node name="FishItem" type="StaticBody2D"]
+z_index = 1
+collision_layer = 4
+script = ExtResource("1_564bo")
+type = 2
+item = ExtResource("2_gv3xg")
+
+[node name="CollectArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
+shape = SubResource("CircleShape2D_dnxrh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_bxl18")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ig465")

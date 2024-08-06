@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkxtbmu1usxwq"]
+
+[ext_resource type="Texture2D" uid="uid://bx7vh7od6fmhy" path="res://assets/background.jpg" id="1_ygpr8"]
+[ext_resource type="Texture2D" uid="uid://ckfos4756a8ux" path="res://assets/Leaf.png" id="2_j3vqp"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e3edl"]
+particles_animation = true
+particles_anim_h_frames = 6
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_w2ad4"]
+colors = PackedColorArray(0, 0, 0, 0.411765, 0, 0, 0, 0.411765)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rst17"]
+gradient = SubResource("Gradient_w2ad4")
+
+[node name="Background" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Image" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("1_ygpr8")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_e3edl")
+position = Vector2(240, 0)
+amount = 6
+lifetime = 7.0
+local_coords = true
+draw_order = 1
+texture = ExtResource("2_j3vqp")
+emission_shape = 3
+emission_rect_extents = Vector2(240, 0)
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+anim_speed_min = 4.0
+anim_speed_max = 5.0
+
+[node name="Filter" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_rst17")

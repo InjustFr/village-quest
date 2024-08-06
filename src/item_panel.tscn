@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://5jcxc2lp5rpi"]
+
+[ext_resource type="Texture2D" uid="uid://dqhyhx7yppuck" path="res://assets/TilesetHouse.png" id="1_hho4n"]
+[ext_resource type="Texture2D" uid="uid://dgo1nnwj55j4t" path="res://assets/TeaLeaf.png" id="2_3dt6r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2myn"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxhjt"]
+atlas = ExtResource("1_hho4n")
+region = Rect2(336, 288, 16, 16)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n2myn")
+
+[node name="ItemPanel" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_lxhjt")
+
+[node name="Resource" type="Sprite2D" parent="ItemPanel"]
+position = Vector2(0, 1)
+texture = ExtResource("2_3dt6r")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca0mi5ipgn7ab"]
+
+[ext_resource type="Script" path="res://src/gui/inventory_ui.gd" id="1_0yikh"]
+[ext_resource type="Theme" uid="uid://wyyce56agfeu" path="res://src/gui/theme.tres" id="1_xh64e"]
+
+[node name="InventoryUi" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xh64e")
+alignment = 2
+script = ExtResource("1_0yikh")

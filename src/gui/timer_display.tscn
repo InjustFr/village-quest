@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5rougxfod8pg"]
+
+[ext_resource type="Theme" uid="uid://wyyce56agfeu" path="res://src/gui/theme.tres" id="1_eo6ah"]
+[ext_resource type="Script" path="res://src/gui/timer_display.gd" id="1_swqsb"]
+
+[node name="TimerDisplay" type="Label"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_eo6ah")
+theme_type_variation = &"HeaderLarge"
+text = "00:00"
+horizontal_alignment = 2
+script = ExtResource("1_swqsb")

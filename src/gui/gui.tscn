@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdu4n0usc1e5c"]
+
+[ext_resource type="Theme" uid="uid://wyyce56agfeu" path="res://src/gui/theme.tres" id="1_2bw6s"]
+[ext_resource type="PackedScene" uid="uid://ca0mi5ipgn7ab" path="res://src/gui/inventory_ui.tscn" id="1_wsf1s"]
+[ext_resource type="PackedScene" uid="uid://wsyrsotsxtjg" path="res://src/gui/quest_ui.tscn" id="3_idnpi"]
+[ext_resource type="PackedScene" uid="uid://b5rougxfod8pg" path="res://src/gui/timer_display.tscn" id="4_a2hh6"]
+[ext_resource type="PackedScene" uid="uid://d1grjsi1p04ok" path="res://src/gui/score_ui.tscn" id="4_s4mlq"]
+[ext_resource type="Script" path="res://src/gui/hint.gd" id="7_3uvbn"]
+
+[node name="Gui" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2bw6s")
+
+[node name="Control" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 2
+
+[node name="InventoryUi" parent="Control" instance=ExtResource("1_wsf1s")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="QuestUi" parent="HBoxContainer" instance=ExtResource("3_idnpi")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ScoreUi" parent="HBoxContainer2" instance=ExtResource("4_s4mlq")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_type_variation = &"HeaderMedium"
+
+[node name="TimerDisplay" parent="HBoxContainer2" instance=ExtResource("4_a2hh6")]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"HeaderMedium"
+
+[node name="Hint" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_bottom = 48
+script = ExtResource("7_3uvbn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Hint"]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="Hint/HBoxContainer"]
+layout_mode = 2
+text = "E / SPACE"
+
+[node name="Label2" type="Label" parent="Hint/HBoxContainer"]
+layout_mode = 2
+text = ":"
+
+[node name="HintText" type="Label" parent="Hint/HBoxContainer"]
+layout_mode = 2
+text = "COLLECT"

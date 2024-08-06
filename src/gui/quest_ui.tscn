@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://wsyrsotsxtjg"]
+
+[ext_resource type="Theme" uid="uid://wyyce56agfeu" path="res://src/gui/theme.tres" id="1_rlor3"]
+[ext_resource type="Script" path="res://src/gui/quest_ui.gd" id="1_uxnfk"]
+
+[node name="QuestUi" type="VBoxContainer"]
+theme = ExtResource("1_rlor3")
+alignment = 2
+script = ExtResource("1_uxnfk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme = ExtResource("1_rlor3")
+
+[node name="NameLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_rlor3")
+text = "QUEST"
+vertical_alignment = 1
+
+[node name="Panel" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_rlor3")
+
+[node name="CompleteLabel" type="Label" parent="HBoxContainer/Panel"]
+layout_mode = 2
+theme = ExtResource("1_rlor3")
+text = "COMPLETE"
+vertical_alignment = 1
+
+[node name="QuestItemsContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme = ExtResource("1_rlor3")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://duduy45gxix51"]
+
+[ext_resource type="Script" path="res://src/quest_item.gd" id="1_52x5x"]
+[ext_resource type="Resource" uid="uid://lr004sybsr0d" path="res://src/items/stone_item_resource.tres" id="2_q5lv5"]
+[ext_resource type="Texture2D" uid="uid://ki4rk6cmfrhj" path="res://assets/TilesetNature.png" id="3_uvhpt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dnxrh"]
+radius = 48.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vosh"]
+atlas = ExtResource("3_uvhpt")
+region = Rect2(304, 272, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ig465"]
+radius = 4.0
+
+[node name="StoneItem" type="StaticBody2D"]
+z_index = 1
+collision_layer = 4
+script = ExtResource("1_52x5x")
+type = 1
+item = ExtResource("2_q5lv5")
+
+[node name="CollectArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
+shape = SubResource("CircleShape2D_dnxrh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_2vosh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ig465")

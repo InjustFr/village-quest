@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuestItemResource" load_steps=2 format=3 uid="uid://lr004sybsr0d"]
+
+[ext_resource type="Script" path="res://src/quest_item_resource.gd" id="1_a6214"]
+
+[resource]
+script = ExtResource("1_a6214")
+type = 1
+icon_path = "res://assets/TilesetNature.png"
+name = "Stone"
+points = 12
+icon_atlas = true
+atlas_pos = Vector2i(304, 272)

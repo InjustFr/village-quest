@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyq5fgeap421f"]
+
+[ext_resource type="Theme" uid="uid://wyyce56agfeu" path="res://src/gui/theme.tres" id="1_nl5eg"]
+[ext_resource type="Script" path="res://src/player_name_menu.gd" id="2_afuaj"]
+[ext_resource type="PackedScene" uid="uid://dkxtbmu1usxwq" path="res://src/gui/background.tscn" id="3_f40cl"]
+
+[node name="PlayerNameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nl5eg")
+script = ExtResource("2_afuaj")
+
+[node name="Background" parent="." instance=ExtResource("3_f40cl")]
+layout_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "PLAYER NAME"
+horizontal_alignment = 1
+
+[node name="PlayerNameEdit" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "YOUR NAME"
+clear_button_enabled = true
+caret_blink = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "START"
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "BACK"

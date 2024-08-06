@@ -1,0 +1,15 @@
+[gd_resource type="LabelSettings" load_steps=3 format=3 uid="uid://0bnafdof554p"]
+
+[ext_resource type="FontFile" uid="uid://dqhh371ywejsh" path="res://assets/ninja_font.ttf" id="1_jhti4"]
+
+[sub_resource type="FontVariation" id="FontVariation_qimf7"]
+base_font = ExtResource("1_jhti4")
+variation_transform = Transform2D(1, 2.08165e-12, 2.08165e-12, 1, 2.08165e-12, 2.08165e-12)
+spacing_glyph = 8
+spacing_top = -16
+
+[resource]
+font = SubResource("FontVariation_qimf7")
+font_size = 12
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)

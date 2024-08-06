@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuestItemResource" load_steps=2 format=3 uid="uid://b4b8ldg4xk3f3"]
+
+[ext_resource type="Script" path="res://src/quest_item_resource.gd" id="1_kcx77"]
+
+[resource]
+script = ExtResource("1_kcx77")
+type = 4
+icon_path = "res://assets/TeaLeaf.png"
+name = "Tea"
+points = 18
+icon_atlas = false
+atlas_pos = Vector2i(0, 0)

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnl8ay41x28vs"]
+
+[ext_resource type="Script" path="res://src/quest_item.gd" id="1_gg4qg"]
+[ext_resource type="Resource" uid="uid://b4b8ldg4xk3f3" path="res://src/items/tea_item_resource.tres" id="2_hbxu4"]
+[ext_resource type="Texture2D" uid="uid://dgo1nnwj55j4t" path="res://assets/TeaLeaf.png" id="3_4fb6h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dnxrh"]
+radius = 48.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ig465"]
+radius = 4.0
+
+[node name="FishItem" type="StaticBody2D"]
+z_index = 1
+collision_layer = 4
+script = ExtResource("1_gg4qg")
+type = 4
+item = ExtResource("2_hbxu4")
+
+[node name="CollectArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectArea"]
+shape = SubResource("CircleShape2D_dnxrh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_4fb6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ig465")

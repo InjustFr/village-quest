@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://dh8hnkrblt8ac"]
+
+[ext_resource type="Theme" uid="uid://wyyce56agfeu" path="res://src/gui/theme.tres" id="1_5r1av"]
+[ext_resource type="Script" path="res://src/gui/score_menu.gd" id="2_mpa71"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bwlnp"]
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_i6iga"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="InputEventKey" id="InputEventKey_v1ysx"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_351e0"]
+events = [SubResource("InputEventKey_i6iga"), SubResource("InputEventKey_v1ysx")]
+
+[node name="ScoreMenu" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5r1av")
+script = ExtResource("2_mpa71")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "GAME   OVER"
+label_settings = SubResource("LabelSettings_bwlnp")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "YOUR   SCORE   IS"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_5r1av")
+theme_type_variation = &"HeaderLarge"
+text = "20000"
+horizontal_alignment = 1
+
+[node name="NewGameButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_5r1av")
+shortcut = SubResource("Shortcut_351e0")
+text = "   NEW   GAME   "

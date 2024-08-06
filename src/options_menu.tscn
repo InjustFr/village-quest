@@ -1,0 +1,113 @@
+[gd_scene load_steps=4 format=3 uid="uid://jj3b8u60i1dv"]
+
+[ext_resource type="Theme" uid="uid://wyyce56agfeu" path="res://src/gui/theme.tres" id="1_knbm1"]
+[ext_resource type="Script" path="res://src/options_menu.gd" id="2_dn3vv"]
+[ext_resource type="PackedScene" uid="uid://dkxtbmu1usxwq" path="res://src/gui/background.tscn" id="3_dq7qo"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_knbm1")
+script = ExtResource("2_dn3vv")
+
+[node name="Background" parent="." instance=ExtResource("3_dq7qo")]
+layout_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="FullscreenContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FullscreenContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "FULLSCREEN"
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FullscreenContainer"]
+layout_mode = 2
+
+[node name="VSyncContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VSyncContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "VSYNC"
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/VSyncContainer"]
+layout_mode = 2
+
+[node name="MusicLevelContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicLevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MUSIC"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicLevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 10.0
+value = 4.0
+
+[node name="SoundEffectsLevelContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SoundEffectsLevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SOUND EFFECTS"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SoundEffectsLevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 10.0
+value = 4.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="OkButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "OK"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuestItemResource" load_steps=2 format=3 uid="uid://p05au8o0e755"]
+
+[ext_resource type="Script" path="res://src/quest_item_resource.gd" id="1_s3x28"]
+
+[resource]
+script = ExtResource("1_s3x28")
+type = 2
+icon_path = "res://assets/Fish.png"
+name = "Fish"
+points = 15
+icon_atlas = false
+atlas_pos = Vector2i(0, 0)
